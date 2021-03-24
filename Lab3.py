@@ -120,10 +120,7 @@ def general(mode, time, K):
         P_reserved_system = 1 - Q_reserved_system
         print("P_reserved_system = ", P_reserved_system)
     if mode == "loaded":
-        total = 1
-        for i in P_dict:
-            total = total * P_dict[i]
-        P_reserved_system = 1 - pow(1 - total, K+1)
+        P_reserved_system = 1 - pow(1 - P_system, K+1)
         print("P_reserved_system = ", P_reserved_system)
         Q_reserved_system = 1 - P_reserved_system
         print("Q_reserved_system = ", Q_reserved_system)
@@ -171,9 +168,6 @@ def distributed(mode, time, K):
     return
 
 main()
-
-
-
 
 
 
